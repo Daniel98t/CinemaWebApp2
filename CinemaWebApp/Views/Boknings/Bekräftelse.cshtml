@@ -1,0 +1,14 @@
+﻿@model CinemaWebApp.Models.Bokning
+
+<h1>Bokningsbekräftelse</h1>
+
+<p>Tack för din bokning, @Model.CustomerName!</p>
+<ul>
+    <li><strong>Film:</strong> @Model.Föreställning.Film.Title</li>
+    <li><strong>Salong:</strong> @Model.Föreställning.Salong.Number</li>
+    <li><strong>Tid:</strong> @Model.Föreställning.Time.ToString("g")</li>
+    <li><strong>Platsnummer:</strong> @Model.SeatNumber</li>
+    <li><strong>Bokningsnummer:</strong> @Model.BookingNumber</li>
+</ul>
+
+

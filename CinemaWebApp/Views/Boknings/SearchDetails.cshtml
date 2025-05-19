@@ -1,0 +1,40 @@
+﻿@model CinemaWebApp.Models.Bokning
+
+@{
+    ViewData["Title"] = "Bokningsdetaljer";
+}
+
+<h1>Bokningsdetaljer</h1>
+
+<table class="table">
+    <tr>
+        <th>Film</th>
+        <td>@Model.Föreställning.Film.Title</td>
+    </tr>
+    <tr>
+        <th>Salong</th>
+        <td>@Model.Föreställning.Salong.Number</td>
+    </tr>
+    <tr>
+        <th>Tid</th>
+        <td>@Model.Föreställning.Time.ToString("g")</td>
+    </tr>
+    <tr>
+        <th>Platsnummer</th>
+        <td>@Model.SeatNumber</td>
+    </tr>
+    <tr>
+        <th>Bokningsnummer</th>
+        <td>@Model.BookingNumber</td>
+    </tr>
+    <tr>
+        <th>Namn</th>
+        <td>@Model.CustomerName</td>
+    </tr>
+    <tr>
+        <th>E-post</th>
+        <td>@Model.CustomerEmail</td>
+    </tr>
+</table>
+
+<a asp-action="Search" class="btn btn-secondary">Tillbaka</a>

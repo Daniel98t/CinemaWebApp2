@@ -1,0 +1,137 @@
+/* Standard-knappar */
+.btn {
+    background-color: #FF4500; /* Neonröd färg */
+    color: white;
+    border: none;
+}
+
+    .btn:hover {
+        background-color: #FF6347; /* Ljusare neonröd vid hover */
+    }
+
+/* För länkar som ser ut som knappar */
+a {
+    color: #FF4500;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #FF6347;
+    }
+
+
+/* Allmän bakgrund och textfärg */
+body {
+    background-color: #2c2c2c; /* Mörkgrå bakgrund */
+    color: #f2f2f2; /* Ljus textfärg */
+    font-family: Arial, sans-serif;
+}
+
+/* Knappar: Neonröda */
+.btn-primary {
+    background-color: #ff4c4c; /* Neonröd bakgrund */
+    border-color: #ff4c4c;
+    color: #fff; /* Vit text */
+}
+
+    .btn-primary:hover {
+        background-color: #e63939; /* Lite mörkare neonröd vid hover */
+        border-color: #e63939;
+    }
+
+/* Tabeller */
+table {
+    background-color: #3d3d3d; /* Ljusare grå bakgrund för tabeller */
+    color: #f2f2f2; /* Ljus textfärg */
+}
+
+    table th, table td {
+        border: 1px solid #555; /* Mörka kanter på tabellceller */
+        padding: 8px;
+    }
+
+/* Rubriker */
+h1, h2, h3 {
+    color: #ff4c4c; /* Neonröda rubriker */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1a1a1a, #333333);
+    color: #ffffff;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Titel och tagline */
+.site-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ff4500; /* Neonröd */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #cccccc;
+}
+
+/* Knappar */
+.button-container {
+    margin-top: 2rem;
+}
+
+.btn-action {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+    .btn-action:hover {
+        background-color: #ff5733; /* Ljusröd nyans vid hover */
+        transform: scale(1.1); /* Lätt förstoring */
+        box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+    }
+/* Stil för länken BoråsFilm längst upp till vänster */
+.site-logo {
+    font-size: 2.5rem; /* Större textstorlek */
+    color: #FF4500; /* Neonröd */
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 10px; 
+}
+
+    .site-logo:hover {
+        color: #FF6347; /* Ljusröd vid hover */
+        text-shadow: 0 0 10px rgba(255, 99, 71, 0.7); /* Neon-glöd */
+        transform: scale(1.1); /* Förstora något vid hover */
+    }
+
+/* Extra spacing runt header för att balansera proportioner */
+header .d-flex {
+    padding: 15px 0;
+}
+/* Mellanrum mellan inmatningsfält och knapp */
+.form-group {
+    margin-bottom: 15px; /* Lägg till mellanrum under fältet */
+}

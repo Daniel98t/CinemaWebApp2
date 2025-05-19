@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Sök Bokning";
+}
+
+<h1>Sök Bokning</h1>
+
+<form asp-action="Search" method="post">
+    <div class="form-group">
+        <label for="bookingNumber">Bokningsnummer</label>
+        <input type="text" id="bookingNumber" name="bookingNumber" class="form-control" required />
+    </div>
+    
+    <button type="submit" class="btn btn-primary mt-3">Sök</button>
+</form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <p class="text-danger">Vänligen ange ett giltigt bokningsnummer.</p>
+}

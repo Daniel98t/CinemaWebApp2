@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BoråsFilm</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <!-- Navigationsrad -->
+        <div class="d-flex align-items-center py-3" style="background-color: #333;">
+            <a asp-controller="Home" asp-action="Index" class="site-logo ms-3">
+                BoråsFilm
+            </a>
+        </div>
+    </header>
+
+    <div class="container text-center py-5">
+        <h1>BoråsFilm</h1>
+        <p>Välkommen till din nästa filmupplevelse</p>
+        <div class="mt-4">
+            <a asp-controller="Boknings" asp-action="Search" class="btn btn-danger btn-lg m-2">Sök Bokning</a>
+            <a asp-controller="Films" asp-action="Index" class="btn btn-danger btn-lg m-2">Se Filmer</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-light text-center py-3" style="background-color: #333;">
+        &copy; 2024 - BoråsFilm - <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-danger">Privacy</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

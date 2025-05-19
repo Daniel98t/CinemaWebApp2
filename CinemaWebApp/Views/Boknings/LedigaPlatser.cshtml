@@ -1,0 +1,35 @@
+﻿@model CinemaWebApp.Models.Föreställning
+
+@{
+    // Försök att hämta lediga platser från ViewBag
+    var ledigaPlatser = ViewBag.LedigaPlatser as List<int> ?? new List<int>();
+}
+
+<h1>Välj en plats för @Model.Film.Title</h1>
+<p>Salong: @Model.Salong.Number</p>
+
+@if (ledigaPlatser.Any())
+{
+    <form asp-action="Boka" method="post">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <label for="seatNumber">Lediga Platser:</label>
+        <select name="seatNumber" id="seatNumber" required>
+            @foreach (var plats in ledigaPlatser)
+            {
+                <option value="@plats">@plats</option>
+            }
+        </select>
+        <br />
+        <label for="customerName">Ditt Namn:</label>
+        <input type="text" id="customerName" name="customerName" required />
+        <br />
+        <label for="customerEmail">Din E-post:</label>
+        <input type="email" id="customerEmail" name="customerEmail" required />
+        <br />
+        <button type="submit">Boka</button>
+    </form>
+}
+else
+{
+    <p class="text-danger">Det finns inga lediga platser för denna föreställning.</p>
+}

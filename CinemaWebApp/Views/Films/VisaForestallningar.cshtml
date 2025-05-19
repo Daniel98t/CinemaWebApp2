@@ -1,0 +1,29 @@
+﻿@model IEnumerable<CinemaWebApp.Models.Föreställning>
+
+@{
+    ViewData["Title"] = "Föreställningar för " + ViewBag.FilmTitle;
+}
+
+<h1>@ViewBag.FilmTitle - Föreställningar</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Salong</th>
+            <th>Tid</th>
+            <th>Åtgärd</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>Salong @item.Salong.Number</td>
+                <td>@item.Time.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>
+                    <a asp-action="Create" asp-controller="Boknings" asp-route-Id="@item.Id" class="btn btn-danger">Boka</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

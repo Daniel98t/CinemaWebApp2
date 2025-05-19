@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CinemaWebApp.Models.Film>
+
+@{
+    ViewData["Title"] = "Se Filmer";
+}
+
+<h1>Filmer</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Genre</th>
+            <th>Beskrivning</th>
+            <th>Längd (minuter)</th>
+            <th>Pris (SEK)</th>
+            <th>Åtgärder</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Genre</td>
+                <td>@item.Description</td>
+                <td>@item.Length</td>
+                <td>@item.Price.ToString("C", System.Globalization.CultureInfo.GetCultureInfo("sv-SE"))</td>
+                <td>
+                    <a asp-action="VisaForestallningar" asp-route-filmId="@item.Id" class="btn btn-primary">Visa Föreställningar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,65 @@
+﻿@model CinemaWebApp.Models.Bokning
+
+@{
+    ViewData["Title"] = "Skapa ny bokning";
+}
+
+<h1>Skapa ny bokning</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        @if (ViewBag.FöreställningId != null && ViewBag.Platser != null)
+        {
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="Id" class="control-label">Föreställning</label>
+                    <select asp-for="Id" class="form-control" asp-items="ViewBag.FöreställningId"></select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="SeatNumber" class="control-label">Platsnummer</label>
+                    <select asp-for="SeatNumber" class="form-control">
+                        @foreach (var plats in ViewBag.Platser as List<int>)
+                        {
+                            if (ViewBag.BokadePlatser != null && ViewBag.BokadePlatser.Contains(plats))
+                            {
+                                <option value="@plats" disabled style="color: gray;">Plats @plats (Otillgänglig)</option>
+                            }
+                            else
+                            {
+                                <option value="@plats">Plats @plats</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CustomerName" class="control-label">Namn</label>
+                    <input asp-for="CustomerName" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="CustomerEmail" class="control-label">E-post</label>
+                    <input asp-for="CustomerEmail" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Skapa bokning" class="btn btn-primary mt-3 btn-spacing" />
+                </div>
+            </form>
+        }
+        else
+        {
+            <p class="text-danger">Kunde inte ladda bokningsinformationen. Kontrollera att föreställningar och platser är korrekt konfigurerade.</p>
+        }
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

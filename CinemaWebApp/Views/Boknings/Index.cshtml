@@ -1,0 +1,70 @@
+﻿@model IEnumerable<CinemaWebApp.Models.Bokning>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bokningar</h1>
+
+<p>
+    <a asp-action="Create">Skapa Ny Bokning</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Film
+            </th>
+            <th>
+                Salong
+            </th>
+            <th>
+                Tid
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeatNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CustomerEmail)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Föreställning.Film.Title
+                </td>
+                <td>
+                    @item.Föreställning.Salong.Number
+                </td>
+                <td>
+                    @item.Föreställning.Time.ToString("g") <!-- Format: Datum och tid -->
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeatNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookingNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerEmail)
+               
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
